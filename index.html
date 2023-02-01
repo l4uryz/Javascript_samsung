@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <!-- Añadimos el archivo css de manera externa con Link, -->
+    <script src="index.js"></script>
+    <!-- Añadimos el archivo JS de manera externa con Link, -->
+
+    <title>Formulario de Acceso</title>
+</head>
+
+<body>
+
+
+    <div class="main">
+        <h1>Create Account</h1>
+        <form action="" id="form">
+            <div>
+                <!-- Ordenamos que el campo nombre no pueda utilizar datos numericos mediante pattern-->
+                <label for="Nombre">Nombre</label>
+                <img src="images/success-icon.svg" class="iconos" id="ok_nombre" style="display: none;">
+                <img src="images/error-icon.svg" class="iconos" id="ko_nombre" style="display: none;">
+                <input type="text" class="campos" id="nombre" value="" size="20" pattern="[a-zA-Z ]{2,254}"
+                    required /><br>
+            </div>
+            <span role="alert" class="error" id="error1" aria-hidden="true">
+                Rellene este campo
+            </span>
+            <!-- Validamos que el correo introducido es OK con expresion regular-->
+            <div><label for="Email">Email</label>
+
+                <img src="images/success-icon.svg" class="iconos" id="ok_email" style="display: none;">
+                <img src="images/error-icon.svg" class="iconos" id="ko_email" style="display: none;">
+
+
+                <input type="email" class="campos" id="email" value="" size="20"
+                    pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+                    required />
+            </div><br>
+            <span role="alert" class="error" id="error_email" aria-hidden="true">
+                Rellene este campo
+            </span>
+            <span role="alert" class="error" id="error2" aria-hidden="true">
+                Email invalido
+            </span>
+            <div><label for="Clave">Clave</label>
+
+                <img src="images/success-icon.svg" class="iconos" id="ok_clave" style="display: none;">
+                <img src="images/error-icon.svg" class="iconos" id="ko_clave" style="display: none;">
+
+                <input type="password" class="campos" id="clave" value="" size="20" minlength="8" required />
+            </div><br>
+
+            <span role="alert" class="error" id="error_clave" aria-hidden="true">
+                Rellene este campo
+            </span>
+
+            <span role="alert" class="error" id="error3" aria-hidden="true">
+                Debe tener más de 8 caracteres
+            </span>
+            <div><label for="Clave_ok">Confirme su clave</label>
+
+                <img src="images/success-icon.svg" class="iconos" id="icono_check_clave" style="display: none;">
+                <img src="images/error-icon.svg" class="iconos" id="icono_error_clave" style="display: none;">
+
+                <input type="password" class="campos" id="clave_ok" value="" minlength="8" required />
+            </div><br>
+            <span role="alert" class="error" id="clave2" aria-hidden="true">
+                Rellene este campo
+            </span>
+            <span role="alert" class="error" id="error4" aria-hidden="true">
+                Las contraseñas deben coincidir
+            </span>
+
+            <div><input type="submit" value="ENVIAR" id="boton_enviar" onclick="validar()" ; /></div>
+
+        </form>
+    </div>
+    </div>
+
+</body>
+
+
+
+</html>
